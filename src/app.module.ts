@@ -7,6 +7,7 @@ import { SteamSyncModule } from './steam-sync/steam-sync.module.js';
 import { ScheduleModule } from '@nestjs/schedule';
 import { GamesModule } from './games/games.module.js';
 import { SwipesModule } from './swipes/swipes.module.js';
+import { FavoritesModule } from './favorites/favorites.module.js';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { SwipesModule } from './swipes/swipes.module.js';
     SteamSyncModule,
     GamesModule,
     SwipesModule,
+    FavoritesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
