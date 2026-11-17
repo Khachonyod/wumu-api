@@ -4,6 +4,7 @@ import { SteamSyncController } from './steam-sync.controller.js';
 
 @Module({
   providers: [SteamSyncService],
-  controllers: [SteamSyncController]
+  controllers: [SteamSyncController],
+  exports: [SteamSyncService],
 })
 export class SteamSyncModule {}

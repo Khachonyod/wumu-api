@@ -9,4 +9,9 @@ export class SteamSyncController {
     runSync() {
         return this.steamSyncService.syncDeals();
     }
+
+    @Post('more')
+    syncMore() {
+        return this.steamSyncService.syncMoreDeals(10);
+    }
 }

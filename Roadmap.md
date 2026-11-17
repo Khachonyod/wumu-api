@@ -60,7 +60,7 @@
 ### Phase 0: เตรียมความพร้อม & วางโครงสร้าง (Setup)
 - [x] เช็กเครื่องมือในเครื่อง (Node.js, npm/pnpm, Docker หรือ PostgreSQL)
 - [x] สร้าง `docker-compose.yml` และรัน PostgreSQL ให้พร้อมใช้งาน
-- [ ] สร้างโปรเจกต์ `wumu-api` (NestJS เสร็จแล้ว ✅) และ `wumu-web` (Next.js รอ Phase 4)
+- [x] สร้างโปรเจกต์ `wumu-api` (NestJS) และ `wumu-web` (Next.js)
 - [x] ตั้งค่าไฟล์ `.env` และทดสอบเชื่อมต่อฐานข้อมูลเบื้องต้น
 
 ### Phase 1: ออกแบบ Database ด้วย Prisma (Data Modeling)
@@ -81,24 +81,24 @@
 - [x] ตั้ง Cron Job ด้วย `@nestjs/schedule` ให้อัปเดตดีลอัตโนมัติ
 
 ### Phase 3: Backend REST API สำหรับปัด & Filter (NestJS)
-- [ ] ทำระบบระบุตัวตนเบื้องต้น (Guest User ID ผ่าน Header หรือ Cookie)
-- [ ] `GET /games/deck` — ดึงการ์ดเกมที่ `isOnSale = true` และ **ตัดเกมที่ User เคยปัดไปแล้วออก**
+- [x] ทำระบบระบุตัวตนเบื้องต้น (Guest User ID ผ่าน Header หรือ Cookie)
+- [x] `GET /games/deck` — ดึงการ์ดเกมที่ `isOnSale = true` และ **ตัดเกมที่ User เคยปัดไปแล้วออก**
   - รองรับ Filter: `genres`, `categories`, `developer`, `publisher`, `maxPrice`, `minDiscount`
-- [ ] `POST /swipes` — บันทึกผล `FAVORITE` หรือ `SKIP` (พร้อม Validation ด้วย DTO)
-- [ ] `GET /favorites` — ดึงรายการเกมที่ปัดขวาเก็บไว้ (รวมถึงเกมที่อาจหมดโปรแล้ว)
-- [ ] `DELETE /favorites/:gameId` — ลบออกจาก Favorite (หรือย้ายสถานะ)
-- [ ] เปิด CORS และทดสอบ API ทุกตัว
+- [x] `POST /swipes` — บันทึกผล `FAVORITE` หรือ `SKIP` (พร้อม Validation ด้วย DTO)
+- [x] `GET /favorites` — ดึงรายการเกมที่ปัดขวาเก็บไว้ (รวมถึงเกมที่อาจหมดโปรแล้ว)
+- [x] `DELETE /favorites/:gameId` — ลบออกจาก Favorite (หรือย้ายสถานะ)
+- [x] เปิด CORS และทดสอบ API ทุกตัว
 
 ### Phase 4: หน้าเว็บปัดการ์ดแบบ Tinder (Next.js + React)
-- [ ] ตั้งค่า Layout, Tailwind CSS และ Theme (แนว Gaming / Dark Mode)
-- [ ] สร้าง **Game Card** แสดง:
+- [x] ตั้งค่า Layout, Tailwind CSS และ Theme (แนว Gaming / Dark Mode)
+- [x] สร้าง **Game Card** แสดง:
   - รูปปก, ชื่อเกม, ป้าย `-%` ส่วนลด, ราคาเต็ม (ขีดฆ่า) vs ราคาลด (THB)
   - แท็ก `Genres`, ชื่อ `Developer` / `Publisher`, คำอธิบายสั้น
   - กดขยายดูรายละเอียดเพิ่มเติม / Screenshots / Trailer / ลิงก์ไปหน้า Steam Store
-- [ ] ทำ **Swipe Gesture** ด้วย Framer Motion (ลากซ้าย = Skip, ลากขวา = Favorite) + ปุ่มกดสำหรับคนใช้เมาส์/คีย์บอร์ด (ลูกศรซ้าย-ขวา)
-- [ ] ทำระบบ **Preload รูปภาพ** การ์ดถัดไป 2–3 ใบ เพื่อไม่ให้กระตุกตอนปัด
-- [ ] สร้าง **Filter Bar / Modal** (เลือกหมวดหมู่, งบสูงสุด, % ลดขั้นต่ำ)
-- [ ] สร้างหน้า **Favorites** (แสดงป้ายบอกว่าเกมไหน *"กำลังลดอยู่"* หรือ *"หมดโปรแล้ว"*)
+- [x] ทำ **Swipe Gesture** ด้วย Framer Motion (ลากซ้าย = Skip, ลากขวา = Favorite) + ปุ่มกดสำหรับคนใช้เมาส์/คีย์บอร์ด (ลูกศรซ้าย-ขวา)
+- [x] ทำระบบ **Preload รูปภาพ** การ์ดถัดไป 2–3 ใบ เพื่อไม่ให้กระตุกตอนปัด
+- [x] สร้าง **Filter Bar / Modal** (เลือกหมวดหมู่, งบสูงสุด, % ลดขั้นต่ำ)
+- [x] สร้างหน้า **Favorites** (แสดงป้ายบอกว่าเกมไหน *"กำลังลดอยู่"* หรือ *"หมดโปรแล้ว"*)
 
 ### Phase 5: ขัดเกลา & ฟีเจอร์ต่อยอด (Polish & Future Ideas)
 - [ ] ปุ่ม **Undo** ย้อนกลับการ์ดล่าสุดกรณีปัดพลาด
